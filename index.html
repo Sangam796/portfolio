@@ -640,6 +640,74 @@
   .reveal-delay-4 { transition-delay: 0.4s; }
   .reveal-delay-5 { transition-delay: 0.5s; }
 
+
+  /* ── Projects ─────────────────── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--gray-3);
+    border: 1px solid var(--gray-3);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .project-card {
+    background: var(--gray-1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: background 0.25s;
+    position: relative;
+  }
+  .project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease);
+  }
+  .project-card:hover { background: var(--gray-2); }
+  .project-card:hover::after { transform: scaleX(1); }
+  .project-num {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--teal);
+    letter-spacing: 0.12em;
+  }
+  .project-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .project-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+  }
+  .project-bullets li {
+    font-size: 0.8rem;
+    color: var(--gray-7);
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+  }
+  .project-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 0.75rem;
+  }
+  @media (max-width: 700px) { .projects-grid { grid-template-columns: 1fr; } }
   /* ── Scrollbar ───────────────────────────────────────── */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--black); }
@@ -685,6 +753,7 @@
     <li><a href="#about">about</a></li>
     <li><a href="#skills">skills</a></li>
     <li><a href="#experience">experience</a></li>
+    <li><a href="#projects">projects</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
   <div class="nav-status">
@@ -724,12 +793,12 @@
         <div class="stat-key">B.Tech CGPA</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-val">40<em>%</em></div>
-        <div class="stat-key">perf. improved</div>
+        <div class="stat-val">3<em>+</em></div>
+        <div class="stat-key">companies worked</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-val">35<em>%</em></div>
-        <div class="stat-key">content reduced</div>
+        <div class="stat-val">6<em>+</em></div>
+        <div class="stat-key">tech stacks</div>
       </div>
     </div>
 
@@ -937,10 +1006,47 @@
 
 <div class="stripe"></div>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">03 —</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-num">01</div>
+      <h3>Paperless Financial Document Processing</h3>
+      <ul class="project-bullets">
+        <li>Automated system to digitize and manage financial documents like invoices and receipts.</li>
+        <li>PDF-to-text processing and rule-based extraction to convert unstructured documents into structured data.</li>
+        <li>Backend services for structured data storage and retrieval using SQL, ensuring consistency and reliability.</li>
+        <li>Reduced manual handling and enabled automated data workflows, improving overall processing efficiency.</li>
+      </ul>
+      <div class="tag-row" style="margin-top:8px">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PDF Processing</span><span class="tag">Regex</span>
+      </div>
+    </div>
+    <div class="project-card reveal reveal-delay-2">
+      <div class="project-num">02</div>
+      <h3>Inventory Management System</h3>
+      <ul class="project-bullets">
+        <li>Digital inventory and billing system to replace manual record-keeping for a small retail business.</li>
+        <li>Modules for stock tracking, purchase recording, and sales management with automated inventory updates.</li>
+        <li>Back-end logic to generate inventory and sales reports for better business decision-making.</li>
+        <li>Addressed real-world constraints such as data accuracy, usability, and day-to-day operational needs.</li>
+      </ul>
+      <div class="tag-row" style="margin-top:8px">
+        <span class="tag">Java</span><span class="tag">SQL</span><span class="tag">JDBC</span><span class="tag">Spring Boot</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header reveal">
-    <span class="section-num">03 —</span>
+    <span class="section-num">04 —</span>
     <h2 class="section-title">Contact</h2>
     <div class="section-line"></div>
   </div>
